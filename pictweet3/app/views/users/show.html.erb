@@ -1,0 +1,13 @@
+<div class="contents row">
+  <p><%= @nickname %>さんの投稿一覧</p>
+  <div class ='user__visiting'>
+    <%= link_to 'あなたが訪問した人', visiting_user_path(current_user.id) %>
+  </div>
+  <div class ='user__visited'>
+    <%= link_to 'あなたを訪問した人', visitors_user_path(current_user.id) %>
+  </div>
+  <% @tweets.each do |tweet| %>
+    <%= render partial: "tweets/tweet", locals: { tweet: tweet } %>
+  <% end %>
+  <%= paginate(@tweets) %>
+</div>

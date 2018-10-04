@@ -1,0 +1,15 @@
+
+
+<h1>あなた を 訪問した人たち</h1>
+
+<% @users.each do |user| %>
+<table>
+<tr>
+  <td>  <%= user.nickname %> </td>
+  <td><%= link_to '詳細', user_path(user) %></td>
+</tr>
+
+</table>
+<% end %>
+
+
